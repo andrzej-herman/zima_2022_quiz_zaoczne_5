@@ -1,0 +1,14 @@
+﻿1. Wyświetl ekran powitalny (powitanie, zasady etc...)
+2. Utwórz bazę pytań
+3. Ustaw aktualną kategorię gry na najniższą (100 pkt)
+4. Wylosuj pytanie z aktualnej kategorii
+5. Wyświetl wylosowane pytanie 
+6. Pobierz odpowiedź od gracza
+7. Walidacja odpowiedzi gracza.
+=> ŹLE => 8. PLANSZA GAME OVER
+=> DOBRZE => 
+	8. Sprawdzamy czy to nie było ostatnie pytanie
+	=> TAK => 9. HURRA WYGRAŁEŚ/ĄŚ QUIZ = > GAME OVER
+	=> NIE 9. BRAWO TO DOBRA ODPOWIEDŹ
+	10. Zwiększamy kategorię na nastepna
+	11. Wracamy do pkt 4
