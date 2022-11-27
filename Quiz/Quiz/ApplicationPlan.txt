@@ -1,8 +1,8 @@
-﻿1. Wyświetl ekran powitalny (powitanie, zasady etc...)
-2. Utwórz bazę pytań
-3. Ustaw aktualną kategorię gry na najniższą (100 pkt)
-4. Wylosuj pytanie z aktualnej kategorii
-5. Wyświetl wylosowane pytanie 
+﻿1. Wyświetl ekran powitalny (powitanie, zasady etc...) => OK
+2. Ustaw aktualną kategorię gry na najniższą (100 pkt) => OK
+3. Utwórz bazę pytań => OK
+4. Wylosuj pytanie z aktualnej kategorii => OK
+5. Wyświetl wylosowane pytanie => OK
 6. Pobierz odpowiedź od gracza
 7. Walidacja odpowiedzi gracza.
 => ŹLE => 8. PLANSZA GAME OVER

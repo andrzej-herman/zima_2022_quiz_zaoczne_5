@@ -1,9 +1,16 @@
-﻿Console.WriteLine();
+﻿using Quiz;
 
-int x = 5;
-int z;
-string s;
+// tworzenie obiektu typu Gra
+var game = new Game();
 
+// tworzenie obiektu typu Message
+var message = new Message();
 
-var t = 4;
-Console.WriteLine();
+// wyświetlanie powitania
+message.DisplayWelcomeScreen();
+
+// losowanie pytania
+game.GetQuestion();
+
+// wyświetlanie pytania
+game.CurrentQuestion.Display();
