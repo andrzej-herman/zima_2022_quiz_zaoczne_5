@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace Quiz
 {
+    // 100, 200, 300, 400, 500, 750, 1000
+
     public class Game
     {
         public Game()
@@ -30,18 +32,25 @@ namespace Quiz
 
         public void GetQuestion()
         {
-            var questionsCat = new List<Question>();
-            foreach (var q in Questions)
-            {
-                if (q.Category == CurrentCategory)
-                {
-                    questionsCat.Add(q);
-                }
-            }
-
+            var questionsCat = Questions.Where(x => x.Category == CurrentCategory).ToList();
             var number = Random.Next(0, questionsCat.Count);
-            CurrentQuestion = questionsCat[number];
-
+            var question = questionsCat[number];
+            question.Answers = question.Answers.OrderBy(x => Random.Next()).ToList();
+            var order = 1;
+            foreach (var a in question.Answers)
+            {
+                a.Order = order;
+                order++;
+            }
+           
+            CurrentQuestion = question;
         }
+
+        public bool CheckPlayerAnswer(int playerNumber)
+        {
+            var answer = CurrentQuestion.Answers.First(x => x.Order == playerNumber);
+            return answer.IsCorrect;
+        }
+
     }
 }

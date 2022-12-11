@@ -3,12 +3,33 @@
 3. Utwórz bazę pytań => OK
 4. Wylosuj pytanie z aktualnej kategorii => OK
 5. Wyświetl wylosowane pytanie => OK
-6. Pobierz odpowiedź od gracza
-7. Walidacja odpowiedzi gracza.
-=> ŹLE => 8. PLANSZA GAME OVER
+6. Pobierz odpowiedź od gracza => OK
+7. Walidacja odpowiedzi gracza. => OK
+=> ŹLE => 8. PLANSZA GAME OVER => OK
 => DOBRZE => 
 	8. Sprawdzamy czy to nie było ostatnie pytanie
 	=> TAK => 9. HURRA WYGRAŁEŚ/ĄŚ QUIZ = > GAME OVER
 	=> NIE 9. BRAWO TO DOBRA ODPOWIEDŹ
 	10. Zwiększamy kategorię na nastepna
 	11. Wracamy do pkt 4
+
+
+
+
+	--------------------------------------------------------
+
+
+	var numbers = new List<int>();
+numbers.Add(34);
+numbers.Add(12);
+numbers.Add(321);
+numbers.Add(58);
+numbers.Add(4);
+numbers.Add(58);
+numbers.Add(650);
+numbers.Add(85);
+numbers.Add(17);
+
+var number = numbers.OrderBy(x => x).FirstOrDefault(x => x > 3);
+
+Console.WriteLine(number);

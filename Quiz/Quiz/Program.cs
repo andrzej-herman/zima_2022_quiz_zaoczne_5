@@ -1,5 +1,8 @@
 ﻿using Quiz;
 
+
+
+
 // tworzenie obiektu typu Gra
 var game = new Game();
 
@@ -12,5 +15,25 @@ message.DisplayWelcomeScreen();
 // losowanie pytania
 game.GetQuestion();
 
-// wyświetlanie pytania
-game.CurrentQuestion.Display();
+// wyświetlanie pytania i pobieranie odpowiedzi gracza
+int playerAnswer = game.CurrentQuestion.Display();
+
+
+// sprawdxamy czy odpowiedź gracza jest prawidłowa
+bool correctAnswer = game.CheckPlayerAnswer(playerAnswer);
+if (correctAnswer)
+{
+    Console.WriteLine("HURRA");
+}
+else
+{
+    message.DisplayFailAndGameOver();
+}
+
+
+
+
+
+
+
+Console.ReadLine();
