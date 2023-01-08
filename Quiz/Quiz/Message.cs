@@ -16,6 +16,8 @@ namespace Quiz
             Console.WriteLine("Spróbuj odpowiedzieć na 7 pytań");
             Console.WriteLine("POWODZDENIA!!!");
             Console.WriteLine();
+            Console.WriteLine("Nacisnij ENTER, aby rozpocząć grę ...");
+            Console.ReadLine();
         }
 
         internal void DisplayFailAndGameOver()
@@ -26,6 +28,28 @@ namespace Quiz
             Console.WriteLine("KONIEC GRY !!!");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.White;
+        }
+
+        public void FinalScreen()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine();
+            Console.WriteLine("BRAWO, UKOŃCZYŁEŚ/AŚ QUIZ ...");
+            Console.WriteLine("KONIEC GRY !!!");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+
+        public void GoodAnswer()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine();
+            Console.WriteLine("Brawo, to był prawidłowa odpowiedź ...");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Naciśnij ENTER, aby zobaczyć następne pytanie ...");
+            Console.ReadLine();
+            Console.WriteLine();
+
         }
     }
 }

@@ -1,8 +1,4 @@
 ﻿using Quiz;
-
-
-
-
 // tworzenie obiektu typu Gra
 var game = new Game();
 
@@ -12,28 +8,39 @@ var message = new Message();
 // wyświetlanie powitania
 message.DisplayWelcomeScreen();
 
-// losowanie pytania
-game.GetQuestion();
 
-// wyświetlanie pytania i pobieranie odpowiedzi gracza
-int playerAnswer = game.CurrentQuestion.Display();
-
-
-// sprawdxamy czy odpowiedź gracza jest prawidłowa
-bool correctAnswer = game.CheckPlayerAnswer(playerAnswer);
-if (correctAnswer)
+while(true)
 {
-    Console.WriteLine("HURRA");
+    // losowanie pytania
+    game.GetQuestion();
+
+    // wyświetlanie pytania i pobieranie odpowiedzi gracza
+    int playerAnswer = game.CurrentQuestion.Display();
+
+
+    // sprawdxamy czy odpowiedź gracza jest prawidłowa
+    bool correctAnswer = game.CheckPlayerAnswer(playerAnswer);
+    if (correctAnswer)
+    {
+        // sprawdzenie czy to było ostatnie pytanie
+        // jeżeli nie => to podnosimy kategorię
+        if (game.IsLastCategory())
+        {
+            message.FinalScreen();
+            break;
+        }
+        else
+        {
+            message.GoodAnswer();
+            // wyswietlamy nastepne pytanie
+        }
+    }
+    else
+    {
+        message.DisplayFailAndGameOver();
+        break;
+    }
+
 }
-else
-{
-    message.DisplayFailAndGameOver();
-}
-
-
-
-
-
-
 
 Console.ReadLine();
